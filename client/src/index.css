@@ -1,7 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
 body {
   font-family: 'Outfit', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Image comparison slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: col-resize;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+input[type="range"]::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
+  cursor: col-resize;
+}
+
+/* Ensure smooth transitions */
+* {
+  box-sizing: border-box;
+}
+
+.aspect-\[4\/3\] {
+  aspect-ratio: 4 / 3;
 }
