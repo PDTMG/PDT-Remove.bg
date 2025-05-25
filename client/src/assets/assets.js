@@ -2,11 +2,13 @@ import logo from './logo.jpg';
 import videoBanner from './videoBanner.mp4';
 import people from './people.png';
 import peopleorg from './people-org.jpg';
+import credits from './credit-card.png';
 export const assets = {
     logo,
     videoBanner,
     people,
     peopleorg,
+    credits
 };
 
 export const steps = [
@@ -67,20 +69,35 @@ export const plans = [
 export const testimonials = [
     {
         id: 1,
-        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business. The quality of the images is amazing and the turnaround time is fast.",
-        author: "John Doe",
-        handle: "@johndoe",
+        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business.",
+        author: "Duc Thinh",
+        handle: "@DucThinh",
     },
     {
         id: 2,
-        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business. The quality of the images is amazing and the turnaround time is fast.",
+        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business. ",
         author: "John Doe",
         handle: "@johndoe",
     },
     {
         id: 3,
-        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business. The quality of the images is amazing and the turnaround time is fast.",
-        author: "John Doe",
-        handle: "@johndoe",
+        quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business.",
+        author: "Ngoc Tho",
+        handle: "@NgocTho",
     }
+]
+
+export const FOOTER_CONSTANTS = [
+    {
+        url: "https://www.facebook.com",
+        logo: "https://www.facebook.com/favicon.ico",
+    },
+    {
+        url: "https://www.twitter.com",
+        logo: "https://www.twitter.com/favicon.ico",
+    },
+    {
+        url: "https://www.linkedin.com",
+        logo: "https://www.linkedin.com/favicon.ico",
+    },
 ]
