@@ -1,0 +1,9 @@
+package in.paduti.removebg.service;
+
+import in.paduti.removebg.dto.UserDTO;
+
+public interface UserService {
+
+    UserDTO saveUser(UserDTO userDTO);
+
+}
