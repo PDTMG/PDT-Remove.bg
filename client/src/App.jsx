@@ -3,17 +3,19 @@ import Footer from "./components/Footer";
 import Menubar from "./components/MenuBar";
 import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast";
+import UserSyncHandler from "./components/UserSyncHandler";
 
 
-const App = () =>{
-  return(
+const App = () => {
+  return (
     <div>
-      <Menubar/>
-      <Toaster/>
+      <UserSyncHandler />
+      <Menubar />
+      <Toaster />
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

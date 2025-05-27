@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
                 .email(userDTO.getEmail())
                 .firstName(userDTO.getFirstName())
                 .lastName(userDTO.getLastName())
+                .photoUrl(userDTO.getPhotoUrl())
                 .build();
     }
 

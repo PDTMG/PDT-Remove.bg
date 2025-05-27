@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
-import { SignedIn, SignedOut, useAuth, useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, useClerk, UserButton, useUser } from "@clerk/clerk-react";
 const Menubar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const { openSignIn, openSignUp } = useClerk();
     const { user } = useUser();
-    const { getToken } = useAuth();
+
 
     const openRegister = () => {
         setMenuOpen(false);
@@ -19,11 +19,7 @@ const Menubar = () => {
         openSignIn({});
     }
 
-    const getData = async () => {
-        const token = await getToken();
-        console.log(token);
-        console.log(user.id);
-    }
+
 
     return (
         <nav className="bg-white px-8 py-4 flex justify-between items-center">
@@ -53,7 +49,7 @@ const Menubar = () => {
                             </p>
 
                         </button>
-                        <button onClick={getData()}>Get The Data</button>
+
                         <p className="text-gray-600 max-sm:hidden">
                             Halo, {user?.fullName}
                         </p>
