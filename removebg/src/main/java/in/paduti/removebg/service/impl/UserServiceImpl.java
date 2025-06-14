@@ -57,4 +57,11 @@ public class UserServiceImpl implements UserService {
                 .credits(newUser.getCredits())
                 .build();
     }
+
+    @Override
+    public UserDTO getUserByClerkId(String clerkId) {
+        UserEntity userEntity = userRepository.findByClerkId(clerkId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+        return mapToDTO(userEntity);
+    }
 }

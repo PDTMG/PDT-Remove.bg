@@ -6,4 +6,6 @@ public interface UserService {
 
     UserDTO saveUser(UserDTO userDTO);
 
+    UserDTO getUserByClerkId(String clerkId);
+
 }
