@@ -8,4 +8,5 @@ public interface UserService {
 
     UserDTO getUserByClerkId(String clerkId);
 
+    void deleteUserByClerkId(String clerkId);
 }

@@ -8,8 +8,7 @@ const UserSyncHandler = () => {
     const { isLoaded, isSignedIn, getToken } = useAuth();
     const { user } = useUser();
     const [synced, setSynced] = useState(false);
-    const { backendUrl } = useContext(AppContext);
-
+    const { backendUrl, loadUserCredit } = useContext(AppContext);
     useEffect(() => {
         const saveUser = async () => {
             if (!isLoaded || !isSignedIn || synced) return;
@@ -29,8 +28,8 @@ const UserSyncHandler = () => {
                         'Content-Type': 'application/json'
                     }
                 });
-
                 setSynced(true);
+                await loadUserCredit(); // Load user credits after syncing
             } catch (error) {
                 console.error('Error syncing user:', error);
                 toast.error('Failed to sync user data. Please try again later.');

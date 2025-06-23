@@ -2,6 +2,7 @@ package in.paduti.removebg.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import in.paduti.removebg.dto.UserDTO;
@@ -19,21 +20,36 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         Optional<UserEntity> optionalUser = userRepository.findByClerkId(userDTO.getClerkId());
+
         if (optionalUser.isPresent()) {
             UserEntity existingUser = optionalUser.get();
             existingUser.setEmail(userDTO.getEmail());
             existingUser.setFirstName(userDTO.getFirstName());
             existingUser.setLastName(userDTO.getLastName());
-            existingUser.setPhotoUrl(userDTO.getPhotoUrl());
+
+            String newPhotoUrl = userDTO.getPhotoUrl();
+            if (newPhotoUrl != null && !newPhotoUrl.isEmpty()) {
+                existingUser.setPhotoUrl(newPhotoUrl);
+            }
+
             if (userDTO.getCredits() != null) {
                 existingUser.setCredits(userDTO.getCredits());
             }
+
             existingUser = userRepository.save(existingUser);
             return mapToDTO(existingUser);
         }
+
         UserEntity newUser = mapToEntity(userDTO);
         userRepository.save(newUser);
         return mapToDTO(newUser);
+    }
+
+    @Override
+    public UserDTO getUserByClerkId(String clerkId) {
+        UserEntity userEntity = userRepository.findByClerkId(clerkId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return mapToDTO(userEntity);
     }
 
     private UserEntity mapToEntity(UserDTO userDTO) {
@@ -47,21 +63,22 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
-    private UserDTO mapToDTO(UserEntity newUser) {
+    private UserDTO mapToDTO(UserEntity entity) {
         return UserDTO.builder()
-                .clerkId(newUser.getClerkId())
-                .email(newUser.getEmail())
-                .firstName(newUser.getFirstName())
-                .lastName(newUser.getLastName())
-                .photoUrl(newUser.getPhotoUrl())
-                .credits(newUser.getCredits())
+                .clerkId(entity.getClerkId())
+                .email(entity.getEmail())
+                .firstName(entity.getFirstName())
+                .lastName(entity.getLastName())
+                .photoUrl(entity.getPhotoUrl())
+                .credits(entity.getCredits())
                 .build();
     }
 
     @Override
-    public UserDTO getUserByClerkId(String clerkId) {
+    public void deleteUserByClerkId(String clerkId) {
         UserEntity userEntity = userRepository.findByClerkId(clerkId)
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
-        return mapToDTO(userEntity);
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        userRepository.delete(userEntity);
     }
 }
