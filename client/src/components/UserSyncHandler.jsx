@@ -19,7 +19,8 @@ const UserSyncHandler = () => {
                     clerkId: user.id,
                     email: user.primaryEmailAddress?.emailAddress,
                     firstName: user.firstName,
-                    lastName: user.lastName
+                    lastName: user.lastName,
+                    photoUrl: user.imageUrl
                 };
 
                 await axios.post(backendUrl + "/users", userData, {

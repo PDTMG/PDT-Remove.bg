@@ -4,7 +4,8 @@ import Menubar from "./components/MenuBar";
 import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast";
 import UserSyncHandler from "./components/UserSyncHandler";
-
+import Result from "./pages/Result";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 
 const App = () => {
   return (
@@ -14,6 +15,16 @@ const App = () => {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/result" element={
+          <>
+            <SignedIn>
+              <Result />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        } />
       </Routes>
       <Footer />
     </div>
