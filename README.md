@@ -15,8 +15,7 @@ Perfect for developers, designers, and meme creators who want a quick and clean 
 | Original Image | Background Removed |
 | -------------- | ------------------ |
 | ![](./client/src/assets/product-org.jpg)   | ![](./client/src/assets/product.jpg)      |
-|                |                    |
-|                |                    |
+
 
 ## 📁 Project Structure
 
