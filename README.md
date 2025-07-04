@@ -28,7 +28,7 @@ PDT-Remove.bg/
 │           └── assets/      # Demo images (original + processed)
 │
 ├── server/                  # Backend (API call + webhook logic)
-│   └── remove_bg.java         # CLI script to call ClipDrop API
+│   └── remove_bg.py        # CLI script to call ClipDrop API
 │
 ├── assets/                  # Public image demo folder
 ├── .env                     # API key stored here
