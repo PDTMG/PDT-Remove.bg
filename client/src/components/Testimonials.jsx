@@ -1,48 +1,115 @@
-import { testimonials } from "../assets/assets";
+import { testimonials } from "../assets/assets"
+import { Quote, Star, Heart, Sparkles, Sun, Smile } from "lucide-react"
+
 const Testimonials = () => {
     return (
-        <div className="max-w-7xl px-4 mx-auto sm:px-6 lg:px-8 py-12">
-            {/* Text section */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-                They love us. You will to.
-            </h2>
-            {/* Body section */}
-            <div className="grid grid-col-1 md:grid-cols-3 gap-8">
-                {testimonials.map((testimonials) => (
-                    <div key={testimonials.id} className="flex flex-cols max-w-md mx-auto md:mx-0 justify-between rounded-xl hover:shadow-lg transition-shadow">
-                        <div className="flex flex-col px-6 pt-8 md-10 space-y-5">
-                            <svg
-                                width="24"
-                                height="18"
-                                viewBox="0 0 24 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="text-gray-A400 dark: text-gray-600 fill-current"
-                            >
-                                <path
-                                    d="M24 7.3h-5.1L22.3.4H171-3.4 6.9v10.3H24V7.3zM10.3 17.6V7.3H5L8.6.4H3.4L0 7.3v10.3h10.3z"
-                                    fill="current"
-                                />
-                            </svg>
-                            <p className="text-gray-700 m-0" style={{hyphens: "auto"}}>
-                                {testimonials.quote}
-                            </p>
-                        </div>
-                        <div className="flex space-x-2 bg-gray-50 px-6 pt-6 pb-5 rounded-b-xl">
-                            <div className="flex flex-col justify-center">
-                                <p className="font-semibold text-gray-900 m-0">
-                                    {testimonials.author}
-                                </p>
-                                <p className="text-gray-500 text-sm m-0 mt-1">
-                                    {testimonials.handle}
-                                </p>
+        <div className="py-20 relative">
+            {/* Floating magical elements */}
+            <div className="absolute top-12 left-12 animate-bounce" style={{ animationDelay: "0s", animationDuration: "4s" }}>
+                <Heart className="w-8 h-8 text-pink-300 opacity-40" />
+            </div>
+            <div
+                className="absolute top-20 right-16 animate-bounce"
+                style={{ animationDelay: "2s", animationDuration: "6s" }}
+            >
+                <Sparkles className="w-6 h-6 text-yellow-300 opacity-50" />
+            </div>
+            <div
+                className="absolute bottom-16 left-20 animate-bounce"
+                style={{ animationDelay: "4s", animationDuration: "5s" }}
+            >
+                <Sun className="w-7 h-7 text-orange-300 opacity-35" />
+            </div>
+
+            {/* Header */}
+            <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 px-4 py-2 rounded-full shadow-lg border-2 border-pink-200 mb-6">
+                    <Heart className="w-4 h-4 text-pink-600 animate-pulse" />
+                    <span className="text-sm font-semibold text-pink-700">💕 Happy Stories</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    <span className="relative">
+                        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                            They Love Us
+                        </span>
+                        <div className="absolute -bottom-2 left-0 right-0 h-3 bg-pink-200/50 rounded-full -z-10"></div>
+                    </span>
+                    <br />
+                    <span className="text-gray-700">And You Will Too!</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join our magical community of happy users who've discovered the joy of effortless background removal
+                </p>
+            </div>
+
+            {/* Testimonials Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {testimonials.map((testimonial, index) => (
+                    <div
+                        key={testimonial.id}
+                        className="group relative bg-gradient-to-br from-white/90 to-green-50/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-green-100 hover:border-green-200 overflow-hidden"
+                        style={{
+                            animationDelay: `${index * 100}ms`,
+                        }}
+                    >
+                        {/* Magical sparkles overlay */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute top-4 right-4 animate-ping">
+                                <Sparkles className="w-4 h-4 text-yellow-400" />
+                            </div>
+                            <div className="absolute bottom-6 left-6 animate-ping" style={{ animationDelay: "0.5s" }}>
+                                <Heart className="w-3 h-3 text-pink-400" />
                             </div>
                         </div>
+
+                        {/* Quote bubble */}
+                        <div className="absolute -top-4 left-8">
+                            <div className="bg-gradient-to-r from-green-400 to-blue-400 p-3 rounded-2xl shadow-lg relative overflow-hidden">
+                                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                                <Quote className="w-6 h-6 text-white relative z-10" />
+                            </div>
+                        </div>
+
+                        {/* Magical rating */}
+                        <div className="flex gap-1 mb-6 mt-4">
+                            {[...Array(5)].map((_, i) => (
+                                <Star
+                                    key={i}
+                                    className="w-5 h-5 text-yellow-400 fill-current animate-bounce"
+                                    style={{ animationDelay: `${i * 100}ms`, animationDuration: "2s" }}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Quote */}
+                        <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic relative z-10 group-hover:text-gray-800 transition-colors duration-300">
+                            "{testimonial.quote}"
+                        </blockquote>
+
+                        {/* Author with magical avatar */}
+                        <div className="flex items-center gap-4 relative z-10">
+                            <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg relative overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                                <span className="relative z-10">{testimonial.author.charAt(0)}</span>
+                            </div>
+                            <div>
+                                <div className="font-semibold text-gray-800 group-hover:text-green-700 transition-colors duration-300 flex items-center gap-2">
+                                    {testimonial.author}
+                                    <Smile className="w-4 h-4 text-yellow-500" />
+                                </div>
+                                <div className="text-gray-500 text-sm">{testimonial.handle}</div>
+                            </div>
+                        </div>
+
+                        {/* Magical border glow */}
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-green-200/20 via-blue-200/20 to-purple-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                     </div>
                 ))}
             </div>
+
+
         </div>
     )
 }
 
-export default Testimonials;
+export default Testimonials

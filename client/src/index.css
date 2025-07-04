@@ -1,10 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 @import "tailwindcss";
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 25%, #f0f9ff 50%, #faf5ff 75%, #fefce8 100%);
+  color: #374151;
+  min-height: 100vh;
+}
+
+/* Ghibli-style scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f0fdf4, #ecfdf5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b981, #3b82f6);
+  border-radius: 6px;
+  border: 2px solid #f0fdf4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #059669, #2563eb);
+}
+
+/* Magical glow animations */
+@keyframes magical-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.5), 0 0 60px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes gentle-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Image comparison slider styles */
@@ -13,10 +80,12 @@ input[type="range"] {
   appearance: none;
   background: transparent;
   cursor: col-resize;
+  outline: none;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   background: transparent;
+  height: 100%;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -25,11 +94,14 @@ input[type="range"]::-webkit-slider-thumb {
   width: 0;
   height: 0;
   background: transparent;
+  border: none;
+  cursor: col-resize;
 }
 
 input[type="range"]::-moz-range-track {
   background: transparent;
   border: none;
+  height: 100%;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -38,6 +110,29 @@ input[type="range"]::-moz-range-thumb {
   background: transparent;
   border: none;
   cursor: col-resize;
+  border-radius: 0;
+}
+
+/* Handwritten font for special elements */
+.font-handwritten {
+  font-family: "Kalam", cursive;
+}
+
+/* Magical effects */
+.magical-glow {
+  animation: magical-glow 3s ease-in-out infinite;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.sparkle-animation {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.gentle-bounce {
+  animation: gentle-bounce 3s ease-in-out infinite;
 }
 
 /* Ensure smooth transitions */
@@ -47,4 +142,149 @@ input[type="range"]::-moz-range-thumb {
 
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
+}
+
+/* Magical text effects */
+.magical-text {
+  background: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6, #f59e0b);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: magical-gradient 4s ease-in-out infinite;
+}
+
+@keyframes magical-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Soft shadows for Ghibli feel */
+.ghibli-shadow {
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
+}
+
+.ghibli-shadow-lg {
+  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04), 0 0 0 1px
+    rgba(16, 185, 129, 0.05);
+}
+
+/* Magical border effects */
+.magical-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6, #f59e0b) 1;
+  animation: magical-border 3s linear infinite;
+}
+
+@keyframes magical-border {
+  0%,
+  100% {
+    border-image-source: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6, #f59e0b);
+  }
+  25% {
+    border-image-source: linear-gradient(45deg, #3b82f6, #8b5cf6, #f59e0b, #10b981);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #8b5cf6, #f59e0b, #10b981, #3b82f6);
+  }
+  75% {
+    border-image-source: linear-gradient(45deg, #f59e0b, #10b981, #3b82f6, #8b5cf6);
+  }
+}
+
+/* Soft, rounded elements */
+.ghibli-rounded {
+  border-radius: 1.5rem;
+}
+
+.ghibli-rounded-lg {
+  border-radius: 2rem;
+}
+
+.ghibli-rounded-xl {
+  border-radius: 2.5rem;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-clip-path {
+  will-change: clip-path;
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimized animations - less intensive */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Replace intensive animations with lighter ones */
+.gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.soft-pulse {
+  animation: soft-pulse 2s ease-in-out infinite;
+}
+
+/* Improve text rendering */
+.text-rendering-optimized {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Better container queries for responsive text */
+@container (max-width: 640px) {
+  .responsive-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@container (min-width: 641px) and (max-width: 1024px) {
+  .responsive-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@container (min-width: 1025px) {
+  .responsive-text {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }

@@ -1,15 +1,37 @@
-import logo from './logo.jpg';
-import videoBanner from './videoBanner.mp4';
-import people from './people.png';
-import peopleorg from './people-org.jpg';
-import credits from './credit-card.png';
+import logo from "./logo.jpg"
+import videoBanner from "./videoBanner.mp4"
+import people from "./people.png"
+import peopleorg from "./people-org.jpg"
+import credits from "./credit-card.png"
+import cars from "./cars.jpg"
+import carsOrg from "./cars-org.jpg"
+import cat from "./cat.jpg"
+import catOrg from "./cat-org.jpg"
+import graphic from "./graphic.jpg"
+import graphicOrg from "./graphic-org.jpg"
+import product from "./product.jpg"
+import productOrg from "./product-org.jpg"
+import padutiOrg from "./paduti-org.jpg"
+import paduti from "./paduti.png"
+
+
 export const assets = {
     logo,
     videoBanner,
     people,
     peopleorg,
-    credits
-};
+    credits,
+    cars,
+    carsOrg,
+    cat,
+    catOrg,
+    graphic,
+    graphicOrg,
+    product,
+    productOrg,
+    paduti,
+    padutiOrg,
+}
 
 export const steps = [
     {
@@ -34,37 +56,36 @@ export const steps = [
             "After selecting a new background color, download your photo and you're done!\n" +
             "You can also save your picture in the Photoroom App by creating an account.",
     },
-];
+]
 
-export const categories = ["People", "Products", "Animals", "Cars", "Graphics"];
+export const categories = ["People", "Products", "Animals", "Cars", "Graphics"]
 
 export const plans = [
     {
         id: "Basic",
         name: "Basic Package",
-        price: 10,
+        price: 260000,
         credits: "100 credits",
         description: "Best for personal use",
-        popular: false
+        popular: false,
     },
     {
         id: "Premium",
         name: "Premium Package",
-        price: 40,
+        price: 500000,
         credits: "500 credits",
         description: "Best for small businesses",
-        popular: true
+        popular: true,
     },
     {
         id: "Ultimate",
         name: "Ultimate Package",
-        price: 70,
+        price: 1000000,
         credits: "1000 credits",
         description: "Best for large businesses",
-        popular: false
-    }
-
-];
+        popular: false,
+    },
+]
 
 export const testimonials = [
     {
@@ -84,7 +105,7 @@ export const testimonials = [
         quote: "I've been using Photoroom for a few months now and it's been a game-changer for my business.",
         author: "Ngoc Tho",
         handle: "@NgocTho",
-    }
+    },
 ]
 
 export const FOOTER_CONSTANTS = [
@@ -101,3 +122,26 @@ export const FOOTER_CONSTANTS = [
         logo: "https://www.linkedin.com/favicon.ico",
     },
 ]
+
+export const categoryImages = {
+    People: {
+        original: padutiOrg,
+        removed: paduti,
+    },
+    Products: {
+        original: productOrg,
+        removed: product,
+    },
+    Animals: {
+        original: catOrg,
+        removed: cat,
+    },
+    Cars: {
+        original: carsOrg,
+        removed: cars,
+    },
+    Graphics: {
+        original: graphicOrg,
+        removed: graphic,
+    },
+}

@@ -1,6 +1,6 @@
 package in.paduti.removebg.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -30,7 +30,7 @@ public class OrderEntity {
     private String orderId;
     private String clerkId;
     private String plan;
-    private Double amount;
+    private Long amount;
     private Integer credits;
     private Boolean payment;
     @CreationTimestamp
