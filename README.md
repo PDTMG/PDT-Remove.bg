@@ -22,12 +22,13 @@ Perfect for developers, designers, and meme-makers who want clean, fast, and cod
 
 ## 📸 Demo
 
-| Original Image | Background Removed |
-|----------------|--------------------|
-| ![](assets/original.jpg) | ![](assets/output.png) |
+| Original Image                             | Background Removed                       |
+|--------------------------------------------|-------------------------------------------|
+| ![](./client/src/assets/product-org.jpg)   | ![](./client/src/assets/product.jpg)      |
 
-> 💡 Replace with real demo images inside the `assets/` folder.
+> 💡 These examples show side-by-side comparisons between original and AI-processed images using the ClipDrop API.
 
 ---
 
 ## 📁 Project Structure
+
