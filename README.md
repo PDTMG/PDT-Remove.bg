@@ -1,90 +1,99 @@
-# PDT-Remove.bg
+# ✨ PDT-Remove.bg
 
-A lightweight and user-friendly tool to automatically remove backgrounds from images using AI.
-Perfect for developers, designers, and meme creators who want a quick and clean result — no Photoshop needed!
+> Say goodbye to messy backgrounds — and hello to clean, polished images — in just one click!
 
-## Features
+**PDT-Remove.bg** is a fast, lightweight tool that uses AI magic to remove image backgrounds with precision. Whether you're a developer, a designer, a meme wizard, or just someone who hates Photoshop — this tool is made for you.
 
-* Remove image background in just one command
-* Clean & accurate AI-powered removal
-* Easy to use for both developers & non-tech users
-* Great for avatars, e-commerce product photos, memes, and more
+---
 
-## Demo
+## 🌟 Features
 
-| Original Image | Background Removed |
-| -------------- | ------------------ |
-| ![](./client/src/assets/product-org.jpg)   | ![](./client/src/assets/product.jpg)      |
+✅ AI-powered background removal
+✅ Ultra-clean, high-resolution outputs
+✅ Simple, intuitive web interface
+✅ Great for avatars, product photos, memes, banners, and more!
+✅ Built-in payment flow for premium usage
 
+---
 
-## 📁 Project Structure
+## 📸 Demo
+
+| 🖼️ Original                             | ✂️ Removed Background                |
+| ---------------------------------------- | ------------------------------------ |
+| ![](./client/src/assets/product-org.jpg) | ![](./client/src/assets/product.jpg) |
+
+---
+
+## 🧠 Tech Stack
+
+### 🖥️ Frontend
+
+* ⚛️ **React** – Component-based UI
+* ⚡ **Vite** – Superfast dev/build tool
+* 🎨 **Tailwind CSS** – Styling made easy
+* 📡 **Axios** – HTTP requests simplified
+* 🔐 **Clerk** – Seamless authentication
+* 🌍 **react-router-dom** – Routing
+* 🔔 **react-hot-toast** – Toast notifications
+* 🧩 **lucide-react** – Icon set
+
+### 🛠️ Backend
+
+* 🧩 **Spring Boot** – Robust API backend
+* ☕ **Java 21**
+* 🧬 **Spring Data JPA** – ORM
+* 🛡️ **Spring Security** – Auth & token management
+* 💾 **MySQL** – Database
+* ✨ **OpenFeign** – External API (ClipDrop) integration
+* 🔐 **JWT (jjwt)** – Auth token handling
+* 🚀 **Lombok** – Boilerplate reducer
+
+---
+
+## 🗂 Project Structure
 
 ```bash
 PDT-Remove.bg/
-├── client/                  # Frontend React app
-│   └── client/              # React project root
+├── client/                  # React frontend
+│   └── client/              # Vite project root
 │       ├── public/          # Static assets
-│       └── src/             # Main React code (components, pages, etc.)
-│           └── assets/      # Demo images (original + processed)
+│       └── src/             # Components, pages, assets
+│           └── assets/      # Sample images
 │
-├── server/                  # Backend (API call + webhook logic)
-│   └── remove_bg.py        # CLI script to call ClipDrop API
+├── server/                  # Backend (Spring Boot)
+│   └── remove_bg.py         # CLI script to call ClipDrop API
 │
-├── assets/                  # Public image demo folder
-├── .env                     # API key stored here
+├── assets/                  # Public images
+├── .env                     # Secrets/API keys
 ├── requirements.txt         # Python dependencies
-└── README.md
+└── README.md                # You're reading it!
 ```
 
-## 🚀 Technologies Used
+---
 
-### Client-side Application
+## 🚀 Getting Started
 
-* **React**
-* **Vite**
-* **Tailwind CSS**
-* **Axios**
-* **Clerk (clerk-react)**
-* **react-router-dom**
-* **lucide-react**
-* **react-hot-toast**
+### Prerequisites
 
-### Backend Service
+* ✅ Node.js (18+)
+* ✅ Java 21
+* ✅ MySQL
+* ✅ ClipDrop API Key
+* ✅ Clerk API Key (optional if not using auth)
+* ✅ VnPay credentials (if enabling payment)
 
-* **Spring Boot**
-* **Java 21**
-* **Spring Data JPA**
-* **Spring Web**
-* **Spring Security**
-* **MySQL Connector/J**
-* **Lombok**
-* **jjwt**
-* **Spring Cloud OpenFeign**
-* **feign-form-spring**
-* **Razorpay (optional)**
+---
 
-## 🚪 Getting Started
+## ⚙️ Installation Guide
 
-### Requirements
-
-* Node.js (v18+)
-* Java 21
-* Maven or mvnw
-* MySQL Server
-* Clerk account (for auth)
-* ClipDrop API key
-* VnPay config (for payment)
-
-## ⚙️ Installation
-
-### 1. Backend Setup
+### 🔧 Backend Setup
 
 ```bash
 git clone <repo-url>
 cd server
 ```
 
-* Create `.env` and set:
+Create a `.env` file:
 
 ```properties
 clipdrop.api.key=your_clipdrop_api_key
@@ -95,7 +104,7 @@ vnpay.url=your_vnpay_url
 vnpay.returnUrl=your_return_url
 ```
 
-* Set MySQL config in `application.properties`
+Update DB config in `application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/your_db
@@ -103,14 +112,16 @@ spring.datasource.username=your_user
 spring.datasource.password=your_pass
 ```
 
-* Run:
+Then run it:
 
 ```bash
 ./mvnw clean install
 ./mvnw spring-boot:run
 ```
 
-### 2. Frontend Setup
+---
+
+### 💻 Frontend Setup
 
 ```bash
 git clone <repo-url>
@@ -118,33 +129,39 @@ cd client/client
 npm install
 ```
 
-* Create `.env`:
+Create a `.env` file:
 
 ```env
 VITE_API_BASE_URL=http://localhost:8080/api
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
 ```
 
-* Run:
+Start the dev server:
 
 ```bash
 npm run dev
 ```
 
-## 📅 Usage
+---
 
-1. Sign up/in with Clerk
-2. Upload image
-3. Wait for background to be removed
-4. Preview and download result
-5. Make payment via VnPay (if needed)
+## 🎮 How to Use
 
-## ✍️ Contributing
+1. 🔐 Sign up or log in via Clerk (optional)
+2. 📤 Upload an image
+3. 🧠 Let the AI do its job
+4. 🔽 Download your clean, background-free image
+5. 💳 Upgrade or make payment if required (VnPay supported)
 
-Pull requests are welcome! Please follow project structure and formatting.
+---
 
-## 📖 License
+## 🤝 Contributing
 
-MIT License — see [LICENSE](LICENSE)
+Contributions are warmly welcome!
+Feel free to fork this repo, open a PR, and suggest features or improvements.
+Make sure to follow the existing folder structure and code style.
 
-See you
+---
+
+## 📄 License
+
+MIT License © 2025 – [LICENSE](./LICENSE)
