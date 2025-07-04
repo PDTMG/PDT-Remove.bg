@@ -1,20 +1,22 @@
 # 🖼️ PDT-Remove.bg
 
-> A lightweight and user-friendly tool to **automatically remove backgrounds** from images using AI.  
-Perfect for developers, designers, and meme creators who want a quick and clean result — no Photoshop needed!
+> A lightweight and user-friendly tool to **automatically remove backgrounds** from images using powerful AI (ClipDrop API).  
+Perfect for developers, designers, and meme-makers who want clean, fast, and code-friendly results — no Photoshop needed!
 
 ![License](https://img.shields.io/github/license/PDTMG/PDT-Remove.bg?style=flat-square)
-![Stars](https://img.shields.io/github/stars/PDTMG/PDT-Remove.bg?style=flat-square)
 ![Issues](https://img.shields.io/github/issues/PDTMG/PDT-Remove.bg?style=flat-square)
+![Stars](https://img.shields.io/github/stars/PDTMG/PDT-Remove.bg?style=flat-square)
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- 🔍 Remove image background in just **one command**
-- 🎯 Clean & accurate AI-powered removal
-- 💡 Easy to use for both developers & non-tech users
-- 🧩 Great for avatars, e-commerce product photos, memes, and more
+- ⚡ One-command background removal via **ClipDrop API**
+- 🖼️ Supports JPG, PNG, JPEG input formats
+- 🔐 Secure API key handling via `.env`
+- 💻 React-based web client for easy upload + preview
+- 🌐 Webhook support via **Ngrok**
+- 🧠 Minimal setup – get started in minutes!
 
 ---
 
@@ -22,22 +24,10 @@ Perfect for developers, designers, and meme creators who want a quick and clean 
 
 | Original Image | Background Removed |
 |----------------|--------------------|
-| ![original](assets/original.jpg) | ![output](assets/output.png) |
+| ![](assets/original.jpg) | ![](assets/output.png) |
 
-> 💡 Bạn có thể thay ảnh demo thật của bạn ở đây nếu có.
+> 💡 Replace with real demo images inside the `assets/` folder.
 
 ---
 
-## 📦 Installation
-
-### ✅ Requirements
-- Python 3.8+
-- `pip` installed
-- API key from [Remove.bg](https://www.remove.bg/api)
-
-### 🛠️ Setup
-
-```bash
-git clone https://github.com/PDTMG/PDT-Remove.bg.git
-cd PDT-Remove.bg
-pip install -r requirements.txt
+## 📁 Project Structure
